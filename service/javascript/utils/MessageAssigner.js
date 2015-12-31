@@ -10,7 +10,7 @@ var MessageAssigner = (function () {
 		return PalmCall.call("palm://org.webosports.notifications", "create", {
 			ownerId: "org.webosports.service.messaging",
 			launchId: "org.webosports.app.messaging",
-			launchParams: {threadId: threadId }, //Seems the messaging app does not support this, yet.
+			launchParams: JSON.stringify({threadId: threadId }), //Seems the messaging app does not support this, yet.
 			title: contactName,
 			body: msg.messageText,
 			iconUrl: "file:///usr/palm/applications/org.webosports.app.messaging/icon.png",
